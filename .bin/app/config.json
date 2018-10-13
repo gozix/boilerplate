@@ -1,0 +1,12 @@
+{
+  "zap": {
+    "cores": [{
+      "level": "debug",
+      "encoding": "json"
+    }],
+    "caller": true,
+    "stacktrace": "error",
+    "development": false
+  },
+  "message": "Oops any message"
+}

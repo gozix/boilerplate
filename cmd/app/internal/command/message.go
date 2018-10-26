@@ -1,3 +1,4 @@
+// Package command contains cli commands.
 package command
 
 import (
@@ -8,9 +9,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func RegisterConfigCommand(builder *di.Builder) {
+// DefCommandConfig is container name.
+const DefCommandConfig = "cli.command.config"
+
+// RegisterMessageCommand register command in di container.
+func RegisterMessageCommand(builder *di.Builder) {
 	builder.AddDefinition(di.Definition{
-		Name: "cli.command.config",
+		Name: DefCommandConfig,
 		Tags: []di.Tag{{
 			Name: glue.TagCliCommand,
 		}},
@@ -25,15 +30,20 @@ func RegisterConfigCommand(builder *di.Builder) {
 				return nil, err
 			}
 
-			return &cobra.Command{
-				Use:           "message",
-				Short:         "Display configured message",
-				SilenceUsage:  true,
-				SilenceErrors: true,
-				Run: func(cmd *cobra.Command, args []string) {
-					logger.Info(cfg.GetString("message"))
-				},
-			}, nil
+			return NewMessageCommand(cfg, logger), nil
 		},
 	})
+}
+
+// NewMessageCommand is command constructor.
+func NewMessageCommand(cfg *viper.Viper, logger *zap.Logger) *cobra.Command {
+	return &cobra.Command{
+		Use:           "message",
+		Short:         "Write configured message to log",
+		SilenceUsage:  true,
+		SilenceErrors: true,
+		Run: func(cmd *cobra.Command, args []string) {
+			logger.Info(cfg.GetString("message"))
+		},
+	}
 }

@@ -10,12 +10,39 @@
   version = "v1.4.7"
 
 [[projects]]
+  digest = "1:38ec74012390146c45af1f92d46e5382b50531247929ff3a685d2b2be65155ac"
+  name = "github.com/gomodule/redigo"
+  packages = [
+    "internal",
+    "redis",
+  ]
+  pruneopts = "UT"
+  revision = "9c11da706d9b7902c6da69c592f75637793fe121"
+  version = "v2.0.0"
+
+[[projects]]
   branch = "master"
   digest = "1:0bd42ea2cfd610a729e8305f3d99d8adf87c17414cafa6e2384b1d62cca5c7af"
   name = "github.com/gozix/glue"
   packages = ["."]
   pruneopts = "UT"
   revision = "cfff60e773d41c28517481118b11f0214b9fdf10"
+
+[[projects]]
+  branch = "master"
+  digest = "1:376652b39db2ed5f48e8dd7c39d84dcdffb2e1ae5fbb4d951563e275f65c6d7f"
+  name = "github.com/gozix/redigo"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "01d0b3f7ecd7ae0a44b557c698ee0dfd8b960340"
+
+[[projects]]
+  branch = "master"
+  digest = "1:e8c2e9d9ad6f58207a91821b9fb9dfa4d8c995ec486fc5ce33cb3a02f8ddd586"
+  name = "github.com/gozix/sql"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "f1d99185b5da12e801610213c3e7b73bc018b396"
 
 [[projects]]
   branch = "master"
@@ -59,6 +86,25 @@
   pruneopts = "UT"
   revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
   version = "v1.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:3935085b1b0bb6cf7c52e66a29c8001b5b9d66b340c91a30500cce51d22e9884"
+  name = "github.com/iqoption/nap"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "1de7e4839ddb26373c70b0db00f7f4cbe4f05616"
+
+[[projects]]
+  digest = "1:8ef506fc2bb9ced9b151dafa592d4046063d744c646c1bbe801982ce87e4bc24"
+  name = "github.com/lib/pq"
+  packages = [
+    ".",
+    "oid",
+  ]
+  pruneopts = "UT"
+  revision = "4ded0e9383f75c197b3a2aaa6d590ac52df6fd79"
+  version = "v1.0.0"
 
 [[projects]]
   digest = "1:53bc4cd4914cd7cd52139990d5170d6dc99067ae31c56530621b18b35fc30318"
@@ -194,8 +240,11 @@
   analyzer-version = 1
   input-imports = [
     "github.com/gozix/glue",
+    "github.com/gozix/redigo",
+    "github.com/gozix/sql",
     "github.com/gozix/viper",
     "github.com/gozix/zap",
+    "github.com/lib/pq",
     "github.com/sarulabs/di",
     "github.com/spf13/cobra",
   ]

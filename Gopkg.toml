@@ -41,3 +41,15 @@ ignored = [
 [[constraint]]
   branch = "master"
   name = "github.com/gozix/zap"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/gozix/sql"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/gozix/redigo"
+
+[[constraint]]
+  name = "github.com/lib/pq"
+  version = "1.0.0"

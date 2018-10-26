@@ -1,4 +1,4 @@
-.PHONY: all build generate compress install-deps install-deps-dev update-deps update-deps-dev test test-with-coverage test-with-coverage-profile lint lint-format lint-import lint-style clean
+.PHONY: all build generate compress install-deps install-deps-dev update-deps update-deps-dev fix fix-import test test-with-coverage test-with-coverage-profile lint lint-format lint-import lint-style clean
 
 # Package dir
 GO_DIR ?= $(shell pwd)
@@ -85,10 +85,16 @@ test-with-coverage:
 test-with-coverage-profile:
 	@echo "Run unit tests with coverage profile"
 	@echo "mode: ${GO_TEST_COVERAGE_MODE}" > "${GO_TEST_COVERAGE_FILE_NAME}"
-	@go test -coverpkg=`go list ./... | grep -vE 'command|definition|domain' | tr '\n' ','` -covermode ${GO_TEST_COVERAGE_MODE} -coverprofile=${GO_TEST_COVERAGE_FILE_NAME} ./...
+	@go test -coverpkg=`go list ./... | grep -vE 'command|domain' | tr '\n' ','` -covermode ${GO_TEST_COVERAGE_MODE} -coverprofile=${GO_TEST_COVERAGE_FILE_NAME} ./...
 	@echo "Generate coverage report";
 	@go tool cover -func="${GO_TEST_COVERAGE_FILE_NAME}";
 	@rm "${GO_TEST_COVERAGE_FILE_NAME}";
+
+fix: fix-import
+
+fix-import:
+	@echo "Fix imports"
+	@errors=$$(goimports -l -w -local $(GO_PKG) $$(go list -f "{{ .Dir }}" ./...)); if [ "$${errors}" != "" ]; then echo "$${errors}"; exit 1; fi
 
 lint: lint-format lint-import lint-style
 
@@ -98,7 +104,7 @@ lint-format:
 
 lint-import:
 	@echo "Check imports"
-	@errors=$$(goimports -l $$(go list -f "{{ .Dir }}" ./...)); if [ "$${errors}" != "" ]; then echo "$${errors}"; exit 1; fi
+	@errors=$$(goimports -l -local $(GO_PKG) $$(go list -f "{{ .Dir }}" ./...)); if [ "$${errors}" != "" ]; then echo "$${errors}"; exit 1; fi
 
 lint-style:
 	@echo "Check code style"

@@ -1,11 +1,14 @@
+// Package internal provide component implementation.
 package internal
 
 import (
 	"github.com/sarulabs/di"
 
 	"github.com/gozix/boilerplate/cmd/app/internal/command"
+	"github.com/gozix/boilerplate/cmd/app/internal/database"
 )
 
+// Bundle is component bundle.
 type Bundle struct{}
 
 // NewBundle is bundle constructor.
@@ -20,7 +23,17 @@ func (*Bundle) Name() string {
 
 // Build implements the glue.Bundle interface.
 func (*Bundle) Build(builder *di.Builder) error {
-	command.RegisterConfigCommand(builder)
+	// commands
+	command.RegisterCookieCommand(builder)
+	command.RegisterMessageCommand(builder)
+
+	// database
+	database.RegisterCookieRepository(builder)
 
 	return nil
+}
+
+// DependsOn implements the glue.BundleDependsOn interface.
+func (*Bundle) DependsOn() []string {
+	return []string{"sql"}
 }

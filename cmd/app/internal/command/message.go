@@ -14,7 +14,7 @@ const DefCommandConfig = "cli.command.config"
 
 // RegisterMessageCommand register command in di container.
 func RegisterMessageCommand(builder *di.Builder) {
-	builder.AddDefinition(di.Definition{
+	builder.Add(di.Def{
 		Name: DefCommandConfig,
 		Tags: []di.Tag{{
 			Name: glue.TagCliCommand,

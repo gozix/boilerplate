@@ -19,7 +19,7 @@ const DefCommandCookie = "cli.command.cookie"
 
 // RegisterCookieCommand register command in di container.
 func RegisterCookieCommand(builder *di.Builder) {
-	builder.AddDefinition(di.Definition{
+	builder.Add(di.Def{
 		Name: DefCommandCookie,
 		Tags: []di.Tag{{
 			Name: glue.TagCliCommand,

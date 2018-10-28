@@ -32,15 +32,15 @@ ignored = [
 
 [[constraint]]
   name = "github.com/sarulabs/di"
-  version = "1.4.0"
-
-[prune]
-  go-tests = true
-  unused-packages = true
+  version = "2.1.0"
 
 [[constraint]]
   branch = "master"
-  name = "github.com/gozix/zap"
+  name = "github.com/gozix/glue"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/gozix/redigo"
 
 [[constraint]]
   branch = "master"
@@ -48,8 +48,16 @@ ignored = [
 
 [[constraint]]
   branch = "master"
-  name = "github.com/gozix/redigo"
+  name = "github.com/gozix/viper"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/gozix/zap"
 
 [[constraint]]
   name = "github.com/lib/pq"
   version = "1.0.0"
+
+[prune]
+  go-tests = true
+  unused-packages = true

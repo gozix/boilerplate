@@ -19,7 +19,7 @@ type CookieRepository struct {
 
 // RegisterCookieRepository register repository in di container.
 func RegisterCookieRepository(builder *di.Builder) {
-	builder.AddDefinition(di.Definition{
+	builder.Add(di.Def{
 		Name: DefCookieRepository,
 		Build: func(ctn di.Container) (_ interface{}, err error) {
 			var registry *sql.Registry

@@ -22,43 +22,43 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:0bd42ea2cfd610a729e8305f3d99d8adf87c17414cafa6e2384b1d62cca5c7af"
+  digest = "1:91abe90cd4b4fc0a08180d39a24614437fccab4f3db5eb4c229e43764f57ea0e"
   name = "github.com/gozix/glue"
   packages = ["."]
   pruneopts = "UT"
-  revision = "cfff60e773d41c28517481118b11f0214b9fdf10"
+  revision = "41eb6fb2070cde1b75970000efffa237ec137a49"
 
 [[projects]]
   branch = "master"
-  digest = "1:376652b39db2ed5f48e8dd7c39d84dcdffb2e1ae5fbb4d951563e275f65c6d7f"
+  digest = "1:dd4441b7f549b20b59ebe4a7d6147a340d722acdd1095945a2e4fbd0685fcbae"
   name = "github.com/gozix/redigo"
   packages = ["."]
   pruneopts = "UT"
-  revision = "01d0b3f7ecd7ae0a44b557c698ee0dfd8b960340"
+  revision = "ca4a9b8bd0365c7f41fb093e0eceaf924a3790ec"
 
 [[projects]]
   branch = "master"
-  digest = "1:e8c2e9d9ad6f58207a91821b9fb9dfa4d8c995ec486fc5ce33cb3a02f8ddd586"
+  digest = "1:2841d96127f2b30012cd200603f2e625e45d3e32ca9d3d90052c3ba1138ec7d4"
   name = "github.com/gozix/sql"
   packages = ["."]
   pruneopts = "UT"
-  revision = "f1d99185b5da12e801610213c3e7b73bc018b396"
+  revision = "3b6db2e5e3eb390dbe67006a0a51c6e7a5f4e702"
 
 [[projects]]
   branch = "master"
-  digest = "1:4d9e855789f964e6179c6f030e9040c217c57813217ffe667e65f00b74c059dc"
+  digest = "1:3e62d887caf312d678348601dfcb2255dc39f2df558c0060b76e86879c08287d"
   name = "github.com/gozix/viper"
   packages = ["."]
   pruneopts = "UT"
-  revision = "d51e44fe73fcaf4fc0745538ef17b7b8fc903763"
+  revision = "fda9dcd7d325d004f5ccf6fce270b595ac6d144d"
 
 [[projects]]
   branch = "master"
-  digest = "1:f4d2860c82003c6a5807cd83b19b355e9463773441badcae9a415b1953aee004"
+  digest = "1:3dc7957f33e80fbe422ad196f5debefa8d0a4e005ef4e6b3a50d9d0e19ee9050"
   name = "github.com/gozix/zap"
   packages = ["."]
   pruneopts = "UT"
-  revision = "a82110c7d10f579042a9e115c8cd45a5c38472a2"
+  revision = "8422289ffff64bc91ebb5011be8a91e4746995b1"
 
 [[projects]]
   digest = "1:c0d19ab64b32ce9fe5cf4ddceba78d5bc9807f0016db6b1183599da3dcc24d10"
@@ -115,12 +115,12 @@
   version = "v1.1.2"
 
 [[projects]]
-  digest = "1:7a9e21bfa0adb248f0ed744e16affbe411db9f8ede72ba00f134ae0630f7437f"
+  digest = "1:2a022345c6d13ce61b6f2ffdf661e3706cd2955b07244f9407ac7d1495d0b9de"
   name = "github.com/sarulabs/di"
   packages = ["."]
   pruneopts = "UT"
-  revision = "766c21947955dbeb05be127d615e9473f4e5e655"
-  version = "v1.4.0"
+  revision = "20b162abade70d47e85fe67047e40a56c8c6b3a9"
+  version = "v2.1.0"
 
 [[projects]]
   branch = "master"
@@ -142,12 +142,12 @@
   version = "v1.1.2"
 
 [[projects]]
-  digest = "1:516e71bed754268937f57d4ecb190e01958452336fa73dbac880894164e91c1f"
+  digest = "1:08d65904057412fc0270fc4812a1c90c594186819243160dc779a402d4b6d0bc"
   name = "github.com/spf13/cast"
   packages = ["."]
   pruneopts = "UT"
-  revision = "8965335b8c7107321228e3e3702cab9832751bac"
-  version = "v1.2.0"
+  revision = "8c9545af88b134710ab1cd196795e7f2388358d7"
+  version = "v1.3.0"
 
 [[projects]]
   digest = "1:645cabccbb4fa8aab25a956cbcbdf6a6845ca736b2c64e197ca7cbb9d210b939"
@@ -214,11 +214,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:9401787ad6dbb15f174329138810aeefa9f17247952980651fb970dcf04a26cc"
+  digest = "1:f22e437d9328275884d0ae018ed0de4c280871c944a5ab332aa37fd71fb5801b"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
-  revision = "731415f00dce967a133e841b3079eda31c996761"
+  revision = "95b1ffbd15a57cc5abb3f04402b9e8ec0016a52c"
 
 [[projects]]
   digest = "1:8029e9743749d4be5bc9f7d42ea1659471767860f0cdc34d37c3111bd308a295"
@@ -244,9 +244,11 @@
     "github.com/gozix/sql",
     "github.com/gozix/viper",
     "github.com/gozix/zap",
+    "github.com/iqoption/nap",
     "github.com/lib/pq",
     "github.com/sarulabs/di",
     "github.com/spf13/cobra",
+    "go.uber.org/zap",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

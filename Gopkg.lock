@@ -38,11 +38,19 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:2841d96127f2b30012cd200603f2e625e45d3e32ca9d3d90052c3ba1138ec7d4"
+  digest = "1:b834be38c074a620578ac1c05bb87e9415e3da8a8994276138b52937c9aa5598"
   name = "github.com/gozix/sql"
   packages = ["."]
   pruneopts = "UT"
-  revision = "3b6db2e5e3eb390dbe67006a0a51c6e7a5f4e702"
+  revision = "88ad7d1a3897bf401d3d6c66de32ffab140dd62a"
+
+[[projects]]
+  branch = "master"
+  digest = "1:52435672202ba4147b3d00183d20e9edb9801195614eff4e23e65d967b320ce3"
+  name = "github.com/gozix/sql-migrate"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "70fedba9e0e085ce30b23ea7bcbc7d7d9d5667f7"
 
 [[projects]]
   branch = "master"
@@ -113,6 +121,17 @@
   pruneopts = "UT"
   revision = "3536a929edddb9a5b34bd6861dc4a9647cb459fe"
   version = "v1.1.2"
+
+[[projects]]
+  branch = "master"
+  digest = "1:cd638908d04442c8b6afd5d0221c21556e76c5e7130448ca97d249b47d66dd41"
+  name = "github.com/rubenv/sql-migrate"
+  packages = [
+    ".",
+    "sqlparse",
+  ]
+  pruneopts = "UT"
+  revision = "3f452fc0ebebbb784fdab91f7bc79a31dcacab5c"
 
 [[projects]]
   digest = "1:2a022345c6d13ce61b6f2ffdf661e3706cd2955b07244f9407ac7d1495d0b9de"
@@ -214,11 +233,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:f22e437d9328275884d0ae018ed0de4c280871c944a5ab332aa37fd71fb5801b"
+  digest = "1:fbacfb57e3d052810813bca2d48c22fbde916ecfc4a2bac08df30ed6e9e59759"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
-  revision = "95b1ffbd15a57cc5abb3f04402b9e8ec0016a52c"
+  revision = "d69651ed3497faee15a5363a89578e9991f6d5e2"
 
 [[projects]]
   digest = "1:8029e9743749d4be5bc9f7d42ea1659471767860f0cdc34d37c3111bd308a295"
@@ -235,6 +254,14 @@
   revision = "f21a4dfb5e38f5895301dc265a8def02365cc3d0"
   version = "v0.3.0"
 
+[[projects]]
+  digest = "1:fa9a7c0ef59217bd22f32eb7cc027894d73f340a5633258cc079dec025db6a7f"
+  name = "gopkg.in/gorp.v1"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "c87af80f3cc5036b55b83d77171e156791085e2e"
+  version = "v1.7.1"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
@@ -242,6 +269,7 @@
     "github.com/gozix/glue",
     "github.com/gozix/redigo",
     "github.com/gozix/sql",
+    "github.com/gozix/sql-migrate",
     "github.com/gozix/viper",
     "github.com/gozix/zap",
     "github.com/iqoption/nap",

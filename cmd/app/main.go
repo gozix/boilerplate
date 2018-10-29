@@ -8,6 +8,7 @@ import (
 	"github.com/gozix/glue"
 	"github.com/gozix/redigo"
 	"github.com/gozix/sql"
+	"github.com/gozix/sql-migrate"
 	"github.com/gozix/viper"
 	"github.com/gozix/zap"
 	_ "github.com/lib/pq" // Postgres database/sql driver
@@ -27,6 +28,7 @@ func main() {
 			zap.NewBundle(),
 			sql.NewBundle(),
 			redigo.NewBundle(),
+			migrate.NewBundle(),
 		),
 	)
 

@@ -61,3 +61,7 @@ ignored = [
 [prune]
   go-tests = true
   unused-packages = true
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/gozix/sql-migrate"

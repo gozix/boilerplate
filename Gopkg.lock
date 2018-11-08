@@ -10,6 +10,26 @@
   version = "v1.4.7"
 
 [[projects]]
+  digest = "1:fd9d04d4fe18d02ecd2cdd0b8335a3c27210b10a9a5b92b9f01ac3caf8648e36"
+  name = "github.com/go-playground/locales"
+  packages = [
+    ".",
+    "currency",
+    "en",
+  ]
+  pruneopts = "UT"
+  revision = "f63010822830b6fe52288ee52d5a1151088ce039"
+  version = "v0.12.1"
+
+[[projects]]
+  digest = "1:e022cf244bcac1b6ef933f1a2e0adcf6a6dfd7b872d8d41e4d4179bb09a87cbc"
+  name = "github.com/go-playground/universal-translator"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "b32fa301c9fe55953584134cb6853a13c87ec0a1"
+  version = "v0.16.0"
+
+[[projects]]
   digest = "1:38ec74012390146c45af1f92d46e5382b50531247929ff3a685d2b2be65155ac"
   name = "github.com/gomodule/redigo"
   packages = [
@@ -30,11 +50,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:dd4441b7f549b20b59ebe4a7d6147a340d722acdd1095945a2e4fbd0685fcbae"
+  digest = "1:e0b87e25ee3b488e03c0a5962f9e7547814cda1fb6b15c24f8da4fb5461876a7"
   name = "github.com/gozix/redigo"
   packages = ["."]
   pruneopts = "UT"
-  revision = "ca4a9b8bd0365c7f41fb093e0eceaf924a3790ec"
+  revision = "c8dcc6cf5b6d8c66ba2282437fedbd679817f96f"
 
 [[projects]]
   branch = "master"
@@ -46,11 +66,27 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:52435672202ba4147b3d00183d20e9edb9801195614eff4e23e65d967b320ce3"
+  digest = "1:5a49636f8192636cee7743d4e6db30ff61a48fc28e0c51592435ac68c80df37c"
   name = "github.com/gozix/sql-migrate"
   packages = ["."]
   pruneopts = "UT"
-  revision = "70fedba9e0e085ce30b23ea7bcbc7d7d9d5667f7"
+  revision = "5f3bb3165e5a1d31baebb7fa1767dec71945fad1"
+
+[[projects]]
+  branch = "master"
+  digest = "1:609fd4d0341ca88d8a5eb46f45cc2ca947d97ccaf8e765badbc6331eca029806"
+  name = "github.com/gozix/universal-translator"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "eaba3ad921f46fa010e17e6802b882cf1b4b53cf"
+
+[[projects]]
+  branch = "master"
+  digest = "1:161d8727207191b8f9ede2c66069a80d4346ea36239253781b4e0e64f3644dd0"
+  name = "github.com/gozix/validator"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "52e81345199ca105ff5e663977c2729114f7ceb4"
 
 [[projects]]
   branch = "master"
@@ -62,11 +98,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:3dc7957f33e80fbe422ad196f5debefa8d0a4e005ef4e6b3a50d9d0e19ee9050"
+  digest = "1:805be9faa2d8563c657cc31522e35cf62027237f3dc17818d379b70ea21e1b14"
   name = "github.com/gozix/zap"
   packages = ["."]
   pruneopts = "UT"
-  revision = "8422289ffff64bc91ebb5011be8a91e4746995b1"
+  revision = "6cc91b0b252a92306d0d6f5be1fd228524bc4a49"
 
 [[projects]]
   digest = "1:c0d19ab64b32ce9fe5cf4ddceba78d5bc9807f0016db6b1183599da3dcc24d10"
@@ -124,14 +160,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:cd638908d04442c8b6afd5d0221c21556e76c5e7130448ca97d249b47d66dd41"
+  digest = "1:89cf776c0a621a34017c819b66b9e0f0bb076d3c5b9ca74763fb89570e140038"
   name = "github.com/rubenv/sql-migrate"
   packages = [
     ".",
     "sqlparse",
   ]
   pruneopts = "UT"
-  revision = "3f452fc0ebebbb784fdab91f7bc79a31dcacab5c"
+  revision = "ba2c6a7295c59448dbc195cef2f41df5163b3892"
 
 [[projects]]
   digest = "1:2a022345c6d13ce61b6f2ffdf661e3706cd2955b07244f9407ac7d1495d0b9de"
@@ -233,11 +269,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:fbacfb57e3d052810813bca2d48c22fbde916ecfc4a2bac08df30ed6e9e59759"
+  digest = "1:7ba061af4131fb44b30448572acd0d6fefbf63a61b97b7ef1dea0be5871c2742"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
-  revision = "d69651ed3497faee15a5363a89578e9991f6d5e2"
+  revision = "66b7b1311ac80bbafcd2daeef9a5e6e2cd1e2399"
 
 [[projects]]
   digest = "1:8029e9743749d4be5bc9f7d42ea1659471767860f0cdc34d37c3111bd308a295"
@@ -255,6 +291,17 @@
   version = "v0.3.0"
 
 [[projects]]
+  digest = "1:2ed8cdca530aebe8c660bd3da71f893b4e61d84f39a352d019c377832b5b5976"
+  name = "gopkg.in/go-playground/validator.v9"
+  packages = [
+    ".",
+    "translations/en",
+  ]
+  pruneopts = "UT"
+  revision = "1fa3c8d6336562f0a3f95c73593ee2b57ff4da11"
+  version = "v9.23.0"
+
+[[projects]]
   digest = "1:fa9a7c0ef59217bd22f32eb7cc027894d73f340a5633258cc079dec025db6a7f"
   name = "gopkg.in/gorp.v1"
   packages = ["."]
@@ -270,6 +317,8 @@
     "github.com/gozix/redigo",
     "github.com/gozix/sql",
     "github.com/gozix/sql-migrate",
+    "github.com/gozix/universal-translator",
+    "github.com/gozix/validator",
     "github.com/gozix/viper",
     "github.com/gozix/zap",
     "github.com/iqoption/nap",

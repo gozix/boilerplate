@@ -5,7 +5,7 @@ package domain
 //easyjson:json
 type Cookie struct {
 	ID   int64  `json:"id"`
-	Name string `json:"name"`
+	Name string `json:"name" validate:"required,lte=20"`
 }
 
 // CookieRepository repository interface.

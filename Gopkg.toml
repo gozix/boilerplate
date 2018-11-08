@@ -65,3 +65,7 @@ ignored = [
 [[constraint]]
   branch = "master"
   name = "github.com/gozix/sql-migrate"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/gozix/validator"

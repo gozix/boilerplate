@@ -5,10 +5,14 @@ import (
 	"strconv"
 
 	"github.com/gozix/glue"
+	"github.com/gozix/universal-translator"
+	validatorBundle "github.com/gozix/validator"
 	zapBundle "github.com/gozix/zap"
+	"github.com/pkg/errors"
 	"github.com/sarulabs/di"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
+	"gopkg.in/go-playground/validator.v9"
 
 	"github.com/gozix/boilerplate/cmd/app/internal/database"
 	"github.com/gozix/boilerplate/cmd/app/internal/domain"
@@ -35,13 +39,28 @@ func RegisterCookieCommand(builder *di.Builder) {
 				return nil, err
 			}
 
-			return NewCookieCommand(logger, repository), nil
+			var translator *ut.UniversalTranslator
+			if err = ctn.Fill(ut.BundleName, &translator); err != nil {
+				return nil, err
+			}
+
+			var validate *validator.Validate
+			if err = ctn.Fill(validatorBundle.BundleName, &validate); err != nil {
+				return nil, err
+			}
+
+			return NewCookieCommand(logger, repository, translator, validate), nil
 		},
 	})
 }
 
 // NewCookieCommand is command constructor.
-func NewCookieCommand(logger *zap.Logger, repository domain.CookieRepository) *cobra.Command {
+func NewCookieCommand(
+	logger *zap.Logger,
+	repository domain.CookieRepository,
+	translator *ut.UniversalTranslator,
+	validate *validator.Validate,
+) *cobra.Command {
 	var root = cobra.Command{
 		Use:           "cookie <command>",
 		Short:         "Cookie command group",
@@ -55,10 +74,23 @@ func NewCookieCommand(logger *zap.Logger, repository domain.CookieRepository) *c
 		SilenceUsage:  true,
 		SilenceErrors: true,
 		Args:          cobra.ExactArgs(1),
-		RunE: func(cmd *cobra.Command, args []string) error {
-			return repository.Save(&domain.Cookie{
+		RunE: func(cmd *cobra.Command, args []string) (err error) {
+			var cookie = &domain.Cookie{
 				Name: args[0],
-			})
+			}
+
+			if err = validate.Struct(cookie); err != nil {
+				switch v := err.(type) {
+				case validator.ValidationErrors:
+					for _, e := range v {
+						return errors.New(e.Translate(translator.GetFallback()))
+					}
+				}
+
+				return err
+			}
+
+			return repository.Save(cookie)
 		},
 	})
 

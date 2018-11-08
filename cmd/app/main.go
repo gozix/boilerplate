@@ -9,6 +9,8 @@ import (
 	"github.com/gozix/redigo"
 	"github.com/gozix/sql"
 	"github.com/gozix/sql-migrate"
+	"github.com/gozix/universal-translator"
+	"github.com/gozix/validator"
 	"github.com/gozix/viper"
 	"github.com/gozix/zap"
 	_ "github.com/lib/pq" // Postgres database/sql driver
@@ -29,6 +31,8 @@ func main() {
 			sql.NewBundle(),
 			redigo.NewBundle(),
 			migrate.NewBundle(),
+			validator.NewBundle(),
+			ut.NewBundle(),
 		),
 	)
 

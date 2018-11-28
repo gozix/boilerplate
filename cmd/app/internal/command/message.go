@@ -9,13 +9,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// DefCommandConfig is container name.
-const DefCommandConfig = "cli.command.config"
+// DefCommandConfigName is container name.
+const DefCommandConfigName = "cli.command.config"
 
-// RegisterMessageCommand register command in di container.
-func RegisterMessageCommand(builder *di.Builder) {
-	builder.Add(di.Def{
-		Name: DefCommandConfig,
+// DefCommandConfig register command in di container.
+func DefCommandConfig() di.Def {
+	return di.Def{
+		Name: DefCommandConfigName,
 		Tags: []di.Tag{{
 			Name: glue.TagCliCommand,
 		}},
@@ -32,7 +32,7 @@ func RegisterMessageCommand(builder *di.Builder) {
 
 			return NewMessageCommand(cfg, logger), nil
 		},
-	})
+	}
 }
 
 // NewMessageCommand is command constructor.

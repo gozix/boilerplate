@@ -18,13 +18,13 @@ import (
 	"github.com/gozix/boilerplate/cmd/app/internal/domain"
 )
 
-// DefCommandCookie is container name.
-const DefCommandCookie = "cli.command.cookie"
+// DefCommandCookieName is container name.
+const DefCommandCookieName = "cli.command.cookie"
 
-// RegisterCookieCommand register command in di container.
-func RegisterCookieCommand(builder *di.Builder) {
-	builder.Add(di.Def{
-		Name: DefCommandCookie,
+// DefCommandCookie register command in di container.
+func DefCommandCookie() di.Def {
+	return di.Def{
+		Name: DefCommandCookieName,
 		Tags: []di.Tag{{
 			Name: glue.TagCliCommand,
 		}},
@@ -35,7 +35,7 @@ func RegisterCookieCommand(builder *di.Builder) {
 			}
 
 			var repository domain.CookieRepository
-			if err = ctn.Fill(database.DefCookieRepository, &repository); err != nil {
+			if err = ctn.Fill(database.DefCookieRepositoryName, &repository); err != nil {
 				return nil, err
 			}
 
@@ -51,7 +51,7 @@ func RegisterCookieCommand(builder *di.Builder) {
 
 			return NewCookieCommand(logger, repository, translator, validate), nil
 		},
-	})
+	}
 }
 
 // NewCookieCommand is command constructor.

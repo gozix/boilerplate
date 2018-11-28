@@ -42,19 +42,19 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:91abe90cd4b4fc0a08180d39a24614437fccab4f3db5eb4c229e43764f57ea0e"
+  digest = "1:071df6f3da3665fdb5ae51e8a48be11d21be97c176a52e8416e2f8116e00692c"
   name = "github.com/gozix/glue"
   packages = ["."]
   pruneopts = "UT"
-  revision = "41eb6fb2070cde1b75970000efffa237ec137a49"
+  revision = "164002b1fed4a5c7a538b6c4f8cedd9fec4254b0"
 
 [[projects]]
   branch = "master"
-  digest = "1:e0b87e25ee3b488e03c0a5962f9e7547814cda1fb6b15c24f8da4fb5461876a7"
+  digest = "1:46ce9dfed9b63b37ab99fbe0cd7a0e98ae9049071ec20f68a958199954c44b9b"
   name = "github.com/gozix/redigo"
   packages = ["."]
   pruneopts = "UT"
-  revision = "c8dcc6cf5b6d8c66ba2282437fedbd679817f96f"
+  revision = "1ebe9ff2fb5caf5c310a5e666224b22973238491"
 
 [[projects]]
   branch = "master"
@@ -66,43 +66,43 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:5a49636f8192636cee7743d4e6db30ff61a48fc28e0c51592435ac68c80df37c"
+  digest = "1:17d0256a9b189d1908b21ad3951538a9af14309b512aff291953d4f009ed3cab"
   name = "github.com/gozix/sql-migrate"
   packages = ["."]
   pruneopts = "UT"
-  revision = "5f3bb3165e5a1d31baebb7fa1767dec71945fad1"
+  revision = "fcff4e8c6ca0e985f236562ee445244129245b1f"
 
 [[projects]]
   branch = "master"
-  digest = "1:609fd4d0341ca88d8a5eb46f45cc2ca947d97ccaf8e765badbc6331eca029806"
+  digest = "1:bce56f24541806f7bbf6c8f06b38cc1d3e0323b00c53ac6721f03b72e38d6c72"
   name = "github.com/gozix/universal-translator"
   packages = ["."]
   pruneopts = "UT"
-  revision = "eaba3ad921f46fa010e17e6802b882cf1b4b53cf"
+  revision = "ff013cc1616398506a6b2bb4955897ed30cfa33e"
 
 [[projects]]
   branch = "master"
-  digest = "1:161d8727207191b8f9ede2c66069a80d4346ea36239253781b4e0e64f3644dd0"
+  digest = "1:580cce463f63c2fbbb69c1f948cbb7f2fdd98c9a91e4a766234df1b05c3c4b62"
   name = "github.com/gozix/validator"
   packages = ["."]
   pruneopts = "UT"
-  revision = "52e81345199ca105ff5e663977c2729114f7ceb4"
+  revision = "59a4f82bcbb444233e96a32ae082d90659076b58"
 
 [[projects]]
   branch = "master"
-  digest = "1:3e62d887caf312d678348601dfcb2255dc39f2df558c0060b76e86879c08287d"
+  digest = "1:3cf4eb332d74be428526cdc0a779339a0d752a443668fd81fc2388d43030dae0"
   name = "github.com/gozix/viper"
   packages = ["."]
   pruneopts = "UT"
-  revision = "fda9dcd7d325d004f5ccf6fce270b595ac6d144d"
+  revision = "81e2606b6396496a072b7e87b37d5fc13c16c657"
 
 [[projects]]
   branch = "master"
-  digest = "1:805be9faa2d8563c657cc31522e35cf62027237f3dc17818d379b70ea21e1b14"
+  digest = "1:6b2f02f4d38e4d27bbdec5300e4de064bbcc1a14b9f62305c45c61a942ad4610"
   name = "github.com/gozix/zap"
   packages = ["."]
   pruneopts = "UT"
-  revision = "6cc91b0b252a92306d0d6f5be1fd228524bc4a49"
+  revision = "0ef8dc1d8687b7ed13d5ec5fcd6b89e4902c84ac"
 
 [[projects]]
   digest = "1:c0d19ab64b32ce9fe5cf4ddceba78d5bc9807f0016db6b1183599da3dcc24d10"
@@ -157,6 +157,14 @@
   pruneopts = "UT"
   revision = "3536a929edddb9a5b34bd6861dc4a9647cb459fe"
   version = "v1.1.2"
+
+[[projects]]
+  digest = "1:40e195917a951a8bf867cd05de2a46aaf1806c50cf92eebf4c16f78cd196f747"
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
+  version = "v0.8.0"
 
 [[projects]]
   branch = "master"
@@ -269,11 +277,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:7ba061af4131fb44b30448572acd0d6fefbf63a61b97b7ef1dea0be5871c2742"
+  digest = "1:8775d8a768d9e65e8b659172804aac5db1fc8d563ba766470a6c2698c57c61a7"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
-  revision = "66b7b1311ac80bbafcd2daeef9a5e6e2cd1e2399"
+  revision = "4ed8d59d0b35e1e29334a206d1b3f38b1e5dfb31"
 
 [[projects]]
   digest = "1:8029e9743749d4be5bc9f7d42ea1659471767860f0cdc34d37c3111bd308a295"
@@ -302,12 +310,12 @@
   version = "v9.23.0"
 
 [[projects]]
-  digest = "1:fa9a7c0ef59217bd22f32eb7cc027894d73f340a5633258cc079dec025db6a7f"
+  digest = "1:1b36b0cb56126316f637ad55cfd5ed84c945fe45bd90e944666b4107a80a1da9"
   name = "gopkg.in/gorp.v1"
   packages = ["."]
   pruneopts = "UT"
-  revision = "c87af80f3cc5036b55b83d77171e156791085e2e"
-  version = "v1.7.1"
+  revision = "6a667da9c028871f98598d85413e3fc4c6daa52e"
+  version = "v1.7.2"
 
 [solve-meta]
   analyzer-name = "dep"
@@ -323,9 +331,11 @@
     "github.com/gozix/zap",
     "github.com/iqoption/nap",
     "github.com/lib/pq",
+    "github.com/pkg/errors",
     "github.com/sarulabs/di",
     "github.com/spf13/cobra",
     "go.uber.org/zap",
+    "gopkg.in/go-playground/validator.v9",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -9,18 +9,18 @@ import (
 	"github.com/gozix/boilerplate/cmd/app/internal/domain"
 )
 
-// DefCookieRepository is container name.
-const DefCookieRepository = "database.repository.cookie"
-
 // CookieRepository implements domain.CookieRepository
 type CookieRepository struct {
 	db *nap.DB
 }
 
-// RegisterCookieRepository register repository in di container.
-func RegisterCookieRepository(builder *di.Builder) {
-	builder.Add(di.Def{
-		Name: DefCookieRepository,
+// DefCookieRepositoryName is container name.
+const DefCookieRepositoryName = "database.repository.cookie"
+
+// DefCookieRepository register repository in di container.
+func DefCookieRepository() di.Def {
+	return di.Def{
+		Name: DefCookieRepositoryName,
 		Build: func(ctn di.Container) (_ interface{}, err error) {
 			var registry *sql.Registry
 			if err = ctn.Fill(sql.BundleName, &registry); err != nil {
@@ -34,7 +34,7 @@ func RegisterCookieRepository(builder *di.Builder) {
 
 			return NewCookieRepository(db), nil
 		},
-	})
+	}
 }
 
 // NewCookieRepository constructor

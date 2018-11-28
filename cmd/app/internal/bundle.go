@@ -2,6 +2,7 @@
 package internal
 
 import (
+	"github.com/gozix/sql"
 	"github.com/sarulabs/di"
 
 	"github.com/gozix/boilerplate/cmd/app/internal/command"
@@ -23,17 +24,19 @@ func (*Bundle) Name() string {
 
 // Build implements the glue.Bundle interface.
 func (*Bundle) Build(builder *di.Builder) error {
-	// commands
-	command.RegisterCookieCommand(builder)
-	command.RegisterMessageCommand(builder)
+	return builder.Add(
+		// commands
+		command.DefCommandCookie(),
+		command.DefCommandConfig(),
 
-	// database
-	database.RegisterCookieRepository(builder)
-
-	return nil
+		// database
+		database.DefCookieRepository(),
+	)
 }
 
 // DependsOn implements the glue.BundleDependsOn interface.
 func (*Bundle) DependsOn() []string {
-	return []string{"sql"}
+	return []string{
+		sql.BundleName,
+	}
 }

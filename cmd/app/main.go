@@ -37,12 +37,12 @@ func main() {
 	)
 
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Some error occurred during create app. Error: %v\n", err)
+		_, _ = fmt.Fprintf(os.Stderr, "Some error occurred during create app. Error: %v\n", err)
 		os.Exit(1)
 	}
 
 	if err = app.Execute(); err != nil {
-		fmt.Fprintf(os.Stderr, "Some error occurred during execute app. Error: %v\n", err)
+		_, _ = fmt.Fprintf(os.Stderr, "Some error occurred during execute app. Error: %v\n", err)
 		os.Exit(2)
 	}
 }

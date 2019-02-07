@@ -9,41 +9,38 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// DefCommandConfigName is container name.
-const DefCommandConfigName = "cli.command.config"
+// DefCommandMessageName is container name.
+const DefCommandMessageName = "cli.command.message"
 
-// DefCommandConfig register command in di container.
-func DefCommandConfig() di.Def {
+// DefCommandMessage register command in di container.
+func DefCommandMessage() di.Def {
 	return di.Def{
-		Name: DefCommandConfigName,
+		Name: DefCommandMessageName,
 		Tags: []di.Tag{{
 			Name: glue.TagCliCommand,
 		}},
 		Build: func(ctn di.Container) (_ interface{}, err error) {
-			var cfg *viper.Viper
-			if err = ctn.Fill(viper.BundleName, &cfg); err != nil {
-				return nil, err
-			}
+			return &cobra.Command{
+				Use:           "message",
+				Short:         "Write configured message to log",
+				SilenceUsage:  true,
+				SilenceErrors: true,
+				RunE: func(cmd *cobra.Command, args []string) error {
+					var cfg *viper.Viper
+					if err = ctn.Fill(viper.BundleName, &cfg); err != nil {
+						return err
+					}
 
-			var logger *zap.Logger
-			if err = ctn.Fill(zap.BundleName, &logger); err != nil {
-				return nil, err
-			}
+					var logger *zap.Logger
+					if err = ctn.Fill(zap.BundleName, &logger); err != nil {
+						return err
+					}
 
-			return NewMessageCommand(cfg, logger), nil
-		},
-	}
-}
+					logger.Info(cfg.GetString("message"))
 
-// NewMessageCommand is command constructor.
-func NewMessageCommand(cfg *viper.Viper, logger *zap.Logger) *cobra.Command {
-	return &cobra.Command{
-		Use:           "message",
-		Short:         "Write configured message to log",
-		SilenceUsage:  true,
-		SilenceErrors: true,
-		Run: func(cmd *cobra.Command, args []string) {
-			logger.Info(cfg.GetString("message"))
+					return nil
+				},
+			}, nil
 		},
 	}
 }

@@ -27,7 +27,9 @@ func (*Bundle) Build(builder *di.Builder) error {
 	return builder.Add(
 		// commands
 		command.DefCommandCookie(),
-		command.DefCommandConfig(),
+		command.DefCommandCookieAdd(),
+		command.DefCommandCookieFetch(),
+		command.DefCommandMessage(),
 
 		// database
 		database.DefCookieRepository(),

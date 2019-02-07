@@ -42,35 +42,35 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:071df6f3da3665fdb5ae51e8a48be11d21be97c176a52e8416e2f8116e00692c"
+  digest = "1:a09d37a1c77cf97b7ea2e54fa0a23a7838aa523c59d635a25923c7df8eb2d161"
   name = "github.com/gozix/glue"
   packages = ["."]
   pruneopts = "UT"
-  revision = "164002b1fed4a5c7a538b6c4f8cedd9fec4254b0"
+  revision = "9ed0944b5f238e1db2b3df5b0ca87bc3666f36fc"
 
 [[projects]]
   branch = "master"
-  digest = "1:46ce9dfed9b63b37ab99fbe0cd7a0e98ae9049071ec20f68a958199954c44b9b"
+  digest = "1:bbdaeb4ce3168e375329b67a70de70636a99cb24b113dc65a0675e9f928804ee"
   name = "github.com/gozix/redigo"
   packages = ["."]
   pruneopts = "UT"
-  revision = "1ebe9ff2fb5caf5c310a5e666224b22973238491"
+  revision = "ccac119b8b0af6d5e29d4cc906daa98ad86eaf48"
 
 [[projects]]
   branch = "master"
-  digest = "1:b834be38c074a620578ac1c05bb87e9415e3da8a8994276138b52937c9aa5598"
+  digest = "1:0bab8fcaccbff599184b89a851bbfc60961e495682303970d07b1c30481ebedf"
   name = "github.com/gozix/sql"
   packages = ["."]
   pruneopts = "UT"
-  revision = "88ad7d1a3897bf401d3d6c66de32ffab140dd62a"
+  revision = "d22e90e4488a13d1cc7b5d7d68a7e8cf0e6f11d2"
 
 [[projects]]
   branch = "master"
-  digest = "1:17d0256a9b189d1908b21ad3951538a9af14309b512aff291953d4f009ed3cab"
+  digest = "1:8a6adaaa807a8bd2de8524df6ac8640f62d089dae782d7a896a290f08bd1566d"
   name = "github.com/gozix/sql-migrate"
   packages = ["."]
   pruneopts = "UT"
-  revision = "fcff4e8c6ca0e985f236562ee445244129245b1f"
+  revision = "7794e1b1e876042ba73208330fc1bbafbdea3c0f"
 
 [[projects]]
   branch = "master"
@@ -98,11 +98,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:6b2f02f4d38e4d27bbdec5300e4de064bbcc1a14b9f62305c45c61a942ad4610"
+  digest = "1:6643927b61338d8fe232fe50a1a27109d02bef07f1f24ca1aad74b4e8764e756"
   name = "github.com/gozix/zap"
   packages = ["."]
   pruneopts = "UT"
-  revision = "0ef8dc1d8687b7ed13d5ec5fcd6b89e4902c84ac"
+  revision = "7051f4309f9dd479780d9f931e2df8ac7eadf4a3"
 
 [[projects]]
   digest = "1:c0d19ab64b32ce9fe5cf4ddceba78d5bc9807f0016db6b1183599da3dcc24d10"
@@ -140,6 +140,14 @@
   revision = "1de7e4839ddb26373c70b0db00f7f4cbe4f05616"
 
 [[projects]]
+  digest = "1:6782ffc812e8e700e6952ede1e60487ff1fd9da489eff762985be662a7cfc431"
+  name = "github.com/leodido/go-urn"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "70078a794e8ea4b497ba7c19a78cd60f90ccf0f4"
+  version = "v1.1.0"
+
+[[projects]]
   digest = "1:8ef506fc2bb9ced9b151dafa592d4046063d744c646c1bbe801982ce87e4bc24"
   name = "github.com/lib/pq"
   packages = [
@@ -159,23 +167,23 @@
   version = "v1.1.2"
 
 [[projects]]
-  digest = "1:40e195917a951a8bf867cd05de2a46aaf1806c50cf92eebf4c16f78cd196f747"
+  digest = "1:cf31692c14422fa27c83a05292eb5cbe0fb2775972e8f1f8446a71549bd8980b"
   name = "github.com/pkg/errors"
   packages = ["."]
   pruneopts = "UT"
-  revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
-  version = "v0.8.0"
+  revision = "ba968bfe8b2f7e042a574c888954fccecfa385b4"
+  version = "v0.8.1"
 
 [[projects]]
   branch = "master"
-  digest = "1:89cf776c0a621a34017c819b66b9e0f0bb076d3c5b9ca74763fb89570e140038"
+  digest = "1:adddeca6a627f69b0c34971dfc13292f334352d43ba0b9b121434ff92a2d04c1"
   name = "github.com/rubenv/sql-migrate"
   packages = [
     ".",
     "sqlparse",
   ]
   pruneopts = "UT"
-  revision = "ba2c6a7295c59448dbc195cef2f41df5163b3892"
+  revision = "5a8808c14925f69d2228981db113f672ad047e69"
 
 [[projects]]
   digest = "1:2a022345c6d13ce61b6f2ffdf661e3706cd2955b07244f9407ac7d1495d0b9de"
@@ -194,15 +202,15 @@
   revision = "05908b1dc8aa0bed7ba85b5d061bdb6ec10c8cd1"
 
 [[projects]]
-  digest = "1:6a4a11ba764a56d2758899ec6f3848d24698d48442ebce85ee7a3f63284526cd"
+  digest = "1:3e39bafd6c2f4bf3c76c3bfd16a2e09e016510ad5db90dc02b88e2f565d6d595"
   name = "github.com/spf13/afero"
   packages = [
     ".",
     "mem",
   ]
   pruneopts = "UT"
-  revision = "d40851caa0d747393da1ffb28f7f9d8b4eeffebd"
-  version = "v1.1.2"
+  revision = "f4711e4db9e9a1d3887343acb72b2bbfc2f686f5"
+  version = "v1.2.1"
 
 [[projects]]
   digest = "1:08d65904057412fc0270fc4812a1c90c594186819243160dc779a402d4b6d0bc"
@@ -237,12 +245,12 @@
   version = "v1.0.3"
 
 [[projects]]
-  digest = "1:214775c11fd26da94a100111a62daa25339198a4f9c57cb4aab352da889f5b93"
+  digest = "1:de37e343c64582d7026bf8ab6ac5b22a72eac54f3a57020db31524affed9f423"
   name = "github.com/spf13/viper"
   packages = ["."]
   pruneopts = "UT"
-  revision = "2c12c60302a5a0e62ee102ca9bc996277c2f64f5"
-  version = "v1.2.1"
+  revision = "6d33b5a963d922d182c91e8a1c88d81fd150cfd4"
+  version = "v1.3.1"
 
 [[projects]]
   digest = "1:3c1a69cdae3501bf75e76d0d86dc6f2b0a7421bc205c0cb7b96b19eed464a34d"
@@ -277,11 +285,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:8775d8a768d9e65e8b659172804aac5db1fc8d563ba766470a6c2698c57c61a7"
+  digest = "1:969c44c96e9866e912a16e282a362cf045b64202107424983fe8abc3373d1eab"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
-  revision = "4ed8d59d0b35e1e29334a206d1b3f38b1e5dfb31"
+  revision = "41f3e6584952bb034a481797859f6ab34b6803bd"
 
 [[projects]]
   digest = "1:8029e9743749d4be5bc9f7d42ea1659471767860f0cdc34d37c3111bd308a295"
@@ -299,15 +307,15 @@
   version = "v0.3.0"
 
 [[projects]]
-  digest = "1:2ed8cdca530aebe8c660bd3da71f893b4e61d84f39a352d019c377832b5b5976"
+  digest = "1:3e112f562e0096355a8bda1c521176831e1665b1a0f648350ca83a9ac5d91848"
   name = "gopkg.in/go-playground/validator.v9"
   packages = [
     ".",
     "translations/en",
   ]
   pruneopts = "UT"
-  revision = "1fa3c8d6336562f0a3f95c73593ee2b57ff4da11"
-  version = "v9.23.0"
+  revision = "774d09c3863ffb2e137ebe4c39ba27648d208f80"
+  version = "v9.26.0"
 
 [[projects]]
   digest = "1:1b36b0cb56126316f637ad55cfd5ed84c945fe45bd90e944666b4107a80a1da9"

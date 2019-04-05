@@ -35,24 +35,32 @@ ignored = [
   version = "2.1.0"
 
 [[constraint]]
-  branch = "master"
   name = "github.com/gozix/glue"
+  version = "1.0.0"
 
 [[constraint]]
-  branch = "master"
   name = "github.com/gozix/redigo"
+  version = "1.0.0"
 
 [[constraint]]
-  branch = "master"
   name = "github.com/gozix/sql"
+  version = "1.0.0"
 
 [[constraint]]
-  branch = "master"
   name = "github.com/gozix/viper"
+  version = "1.0.0"
 
 [[constraint]]
-  branch = "master"
   name = "github.com/gozix/zap"
+  version = "1.0.0"
+
+[[constraint]]
+  name = "github.com/gozix/sql-migrate"
+  version = "1.0.0"
+
+[[constraint]]
+  name = "github.com/gozix/validator"
+  version = "1.0.0"
 
 [[constraint]]
   name = "github.com/lib/pq"
@@ -61,11 +69,3 @@ ignored = [
 [prune]
   go-tests = true
   unused-packages = true
-
-[[constraint]]
-  branch = "master"
-  name = "github.com/gozix/sql-migrate"
-
-[[constraint]]
-  branch = "master"
-  name = "github.com/gozix/validator"

@@ -41,68 +41,71 @@
   version = "v2.0.0"
 
 [[projects]]
-  branch = "master"
-  digest = "1:a09d37a1c77cf97b7ea2e54fa0a23a7838aa523c59d635a25923c7df8eb2d161"
+  digest = "1:4c25c85dbb11d8be785279687eb5d706aa7f8549a94411007b628c295354bc19"
   name = "github.com/gozix/glue"
   packages = ["."]
   pruneopts = "UT"
-  revision = "9ed0944b5f238e1db2b3df5b0ca87bc3666f36fc"
+  revision = "1dcd3b0a5154436f2cec120ec75904c10b10bcbf"
+  version = "v1.0.0"
 
 [[projects]]
-  branch = "master"
   digest = "1:bbdaeb4ce3168e375329b67a70de70636a99cb24b113dc65a0675e9f928804ee"
   name = "github.com/gozix/redigo"
   packages = ["."]
   pruneopts = "UT"
   revision = "ccac119b8b0af6d5e29d4cc906daa98ad86eaf48"
+  version = "v1.0.0"
 
 [[projects]]
-  branch = "master"
   digest = "1:0bab8fcaccbff599184b89a851bbfc60961e495682303970d07b1c30481ebedf"
   name = "github.com/gozix/sql"
   packages = ["."]
   pruneopts = "UT"
   revision = "d22e90e4488a13d1cc7b5d7d68a7e8cf0e6f11d2"
+  version = "v1.0.0"
 
 [[projects]]
-  branch = "master"
-  digest = "1:8a6adaaa807a8bd2de8524df6ac8640f62d089dae782d7a896a290f08bd1566d"
+  digest = "1:e45ea6043e5a8ee87a3254f7509aa44434b72163db21d6b16570f8a75c2c1c4e"
   name = "github.com/gozix/sql-migrate"
-  packages = ["."]
+  packages = [
+    ".",
+    "internal/command",
+  ]
   pruneopts = "UT"
-  revision = "7794e1b1e876042ba73208330fc1bbafbdea3c0f"
+  revision = "906050a8c765c50387235399eb23f8625925953d"
+  version = "v1.0.0"
 
 [[projects]]
-  branch = "master"
   digest = "1:bce56f24541806f7bbf6c8f06b38cc1d3e0323b00c53ac6721f03b72e38d6c72"
   name = "github.com/gozix/universal-translator"
   packages = ["."]
   pruneopts = "UT"
   revision = "ff013cc1616398506a6b2bb4955897ed30cfa33e"
+  version = "v1.0.0"
 
 [[projects]]
-  branch = "master"
   digest = "1:580cce463f63c2fbbb69c1f948cbb7f2fdd98c9a91e4a766234df1b05c3c4b62"
   name = "github.com/gozix/validator"
   packages = ["."]
   pruneopts = "UT"
   revision = "59a4f82bcbb444233e96a32ae082d90659076b58"
+  version = "v1.0.0"
 
 [[projects]]
-  branch = "master"
-  digest = "1:3cf4eb332d74be428526cdc0a779339a0d752a443668fd81fc2388d43030dae0"
+  digest = "1:3d28cd08c0f5cfd7618ad45c2a3ef2347d52a25bd3d17c448a82c93f7330ea78"
   name = "github.com/gozix/viper"
   packages = ["."]
   pruneopts = "UT"
-  revision = "81e2606b6396496a072b7e87b37d5fc13c16c657"
+  revision = "f47e578e609001ed7ed324f03472c7f70cb8be4f"
+  version = "v1.0.0"
 
 [[projects]]
-  branch = "master"
   digest = "1:6643927b61338d8fe232fe50a1a27109d02bef07f1f24ca1aad74b4e8764e756"
   name = "github.com/gozix/zap"
   packages = ["."]
   pruneopts = "UT"
   revision = "7051f4309f9dd479780d9f931e2df8ac7eadf4a3"
+  version = "v1.0.0"
 
 [[projects]]
   digest = "1:c0d19ab64b32ce9fe5cf4ddceba78d5bc9807f0016db6b1183599da3dcc24d10"
@@ -176,14 +179,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:adddeca6a627f69b0c34971dfc13292f334352d43ba0b9b121434ff92a2d04c1"
+  digest = "1:83eb06141fc25c7fd89f8b39717962ac930a7480796aab3d46c7e88507a69173"
   name = "github.com/rubenv/sql-migrate"
   packages = [
     ".",
     "sqlparse",
   ]
   pruneopts = "UT"
-  revision = "5a8808c14925f69d2228981db113f672ad047e69"
+  revision = "54bad0a9b051368ffec9cd2b869789c2b8eaea35"
 
 [[projects]]
   digest = "1:2a022345c6d13ce61b6f2ffdf661e3706cd2955b07244f9407ac7d1495d0b9de"
@@ -202,15 +205,15 @@
   revision = "05908b1dc8aa0bed7ba85b5d061bdb6ec10c8cd1"
 
 [[projects]]
-  digest = "1:3e39bafd6c2f4bf3c76c3bfd16a2e09e016510ad5db90dc02b88e2f565d6d595"
+  digest = "1:bb495ec276ab82d3dd08504bbc0594a65de8c3b22c6f2aaa92d05b73fbf3a82e"
   name = "github.com/spf13/afero"
   packages = [
     ".",
     "mem",
   ]
   pruneopts = "UT"
-  revision = "f4711e4db9e9a1d3887343acb72b2bbfc2f686f5"
-  version = "v1.2.1"
+  revision = "588a75ec4f32903aa5e39a2619ba6a4631e28424"
+  version = "v1.2.2"
 
 [[projects]]
   digest = "1:08d65904057412fc0270fc4812a1c90c594186819243160dc779a402d4b6d0bc"
@@ -229,12 +232,12 @@
   version = "v0.0.3"
 
 [[projects]]
-  digest = "1:68ea4e23713989dc20b1bded5d9da2c5f9be14ff9885beef481848edd18c26cb"
+  digest = "1:1b753ec16506f5864d26a28b43703c58831255059644351bbcb019b843950900"
   name = "github.com/spf13/jwalterweatherman"
   packages = ["."]
   pruneopts = "UT"
-  revision = "4a4406e478ca629068e7768fc33f3f044173c0a6"
-  version = "v1.0.0"
+  revision = "94f6ae3ed3bceceafa716478c5fbf8d29ca601a1"
+  version = "v1.1.0"
 
 [[projects]]
   digest = "1:c1b1102241e7f645bc8e0c22ae352e8f0dc6484b6cb4d132fa9f24174e0119e2"
@@ -245,12 +248,12 @@
   version = "v1.0.3"
 
 [[projects]]
-  digest = "1:de37e343c64582d7026bf8ab6ac5b22a72eac54f3a57020db31524affed9f423"
+  digest = "1:1b773526998f3dbde3a51a4a5881680c4d237d3600f570d900f97ac93c7ba0a8"
   name = "github.com/spf13/viper"
   packages = ["."]
   pruneopts = "UT"
-  revision = "6d33b5a963d922d182c91e8a1c88d81fd150cfd4"
-  version = "v1.3.1"
+  revision = "9e56dacc08fbbf8c9ee2dbc717553c758ce42bc9"
+  version = "v1.3.2"
 
 [[projects]]
   digest = "1:3c1a69cdae3501bf75e76d0d86dc6f2b0a7421bc205c0cb7b96b19eed464a34d"
@@ -285,11 +288,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:969c44c96e9866e912a16e282a362cf045b64202107424983fe8abc3373d1eab"
+  digest = "1:e18c1645adfe83d66f80d3676040e478895669f9456ca8bafa6a7290656c1b48"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
-  revision = "41f3e6584952bb034a481797859f6ab34b6803bd"
+  revision = "81d4e9dc473e5e8c933f2aaeba2a3d81efb9aed2"
 
 [[projects]]
   digest = "1:8029e9743749d4be5bc9f7d42ea1659471767860f0cdc34d37c3111bd308a295"
@@ -307,15 +310,15 @@
   version = "v0.3.0"
 
 [[projects]]
-  digest = "1:3e112f562e0096355a8bda1c521176831e1665b1a0f648350ca83a9ac5d91848"
+  digest = "1:d9ed69c1d4d528e4a7779accc3ee070e68760cdd822f69ff2cf8ae0f677afbe2"
   name = "gopkg.in/go-playground/validator.v9"
   packages = [
     ".",
     "translations/en",
   ]
   pruneopts = "UT"
-  revision = "774d09c3863ffb2e137ebe4c39ba27648d208f80"
-  version = "v9.26.0"
+  revision = "46b4b1e301c24cac870ffcb4ba5c8a703d1ef475"
+  version = "v9.28.0"
 
 [[projects]]
   digest = "1:1b36b0cb56126316f637ad55cfd5ed84c945fe45bd90e944666b4107a80a1da9"

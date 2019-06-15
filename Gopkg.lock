@@ -65,15 +65,15 @@
   version = "v1.0.0"
 
 [[projects]]
-  digest = "1:e45ea6043e5a8ee87a3254f7509aa44434b72163db21d6b16570f8a75c2c1c4e"
+  digest = "1:765620e112dc041d76d8547b7746308360a05416f9544dd0004402bc3f4299aa"
   name = "github.com/gozix/sql-migrate"
   packages = [
     ".",
     "internal/command",
   ]
   pruneopts = "UT"
-  revision = "906050a8c765c50387235399eb23f8625925953d"
-  version = "v1.0.0"
+  revision = "8a0e59fae2589e8ed1e44122763736940bbb566f"
+  version = "v1.0.1"
 
 [[projects]]
   digest = "1:bce56f24541806f7bbf6c8f06b38cc1d3e0323b00c53ac6721f03b72e38d6c72"
@@ -100,12 +100,12 @@
   version = "v1.0.0"
 
 [[projects]]
-  digest = "1:6643927b61338d8fe232fe50a1a27109d02bef07f1f24ca1aad74b4e8764e756"
+  digest = "1:e6128b77a3126de1abdcb2ee1d39e5ad1dfad51648dc182dd55fc745f12b4b90"
   name = "github.com/gozix/zap"
   packages = ["."]
   pruneopts = "UT"
-  revision = "7051f4309f9dd479780d9f931e2df8ac7eadf4a3"
-  version = "v1.0.0"
+  revision = "8ff97aef65427dd1b6d37cd300ccb25a6343b396"
+  version = "v1.2.0"
 
 [[projects]]
   digest = "1:c0d19ab64b32ce9fe5cf4ddceba78d5bc9807f0016db6b1183599da3dcc24d10"
@@ -151,15 +151,16 @@
   version = "v1.1.0"
 
 [[projects]]
-  digest = "1:8ef506fc2bb9ced9b151dafa592d4046063d744c646c1bbe801982ce87e4bc24"
+  digest = "1:bdd53b87de8185da386bae179c84d4848854c6870bacacf6a154fe63e2e750f7"
   name = "github.com/lib/pq"
   packages = [
     ".",
     "oid",
+    "scram",
   ]
   pruneopts = "UT"
-  revision = "4ded0e9383f75c197b3a2aaa6d590ac52df6fd79"
-  version = "v1.0.0"
+  revision = "bc6a3c0594130b1e34005880bc600b6d3f49fa7f"
+  version = "v1.1.1"
 
 [[projects]]
   digest = "1:53bc4cd4914cd7cd52139990d5170d6dc99067ae31c56530621b18b35fc30318"
@@ -189,12 +190,12 @@
   revision = "54bad0a9b051368ffec9cd2b869789c2b8eaea35"
 
 [[projects]]
-  digest = "1:2a022345c6d13ce61b6f2ffdf661e3706cd2955b07244f9407ac7d1495d0b9de"
+  digest = "1:ae8d0283064c4f3c31b432caccd91f45a5c3c9ab616c2280c7e4f2ca4a465962"
   name = "github.com/sarulabs/di"
   packages = ["."]
   pruneopts = "UT"
-  revision = "20b162abade70d47e85fe67047e40a56c8c6b3a9"
-  version = "v2.1.0"
+  revision = "aefea82d14aa34cf1b81c8fea53e20f48855a364"
+  version = "v2.1.1"
 
 [[projects]]
   branch = "master"
@@ -224,12 +225,12 @@
   version = "v1.3.0"
 
 [[projects]]
-  digest = "1:645cabccbb4fa8aab25a956cbcbdf6a6845ca736b2c64e197ca7cbb9d210b939"
+  digest = "1:e096613fb7cf34743d49af87d197663cfccd61876e2219853005a57baedfa562"
   name = "github.com/spf13/cobra"
   packages = ["."]
   pruneopts = "UT"
-  revision = "ef82de70bb3f60c65fb8eebacbb2d122ef517385"
-  version = "v0.0.3"
+  revision = "f2b07da1e2c38d5f12845a4f607e2e1018cbb1f5"
+  version = "v0.0.5"
 
 [[projects]]
   digest = "1:1b753ec16506f5864d26a28b43703c58831255059644351bbcb019b843950900"
@@ -248,20 +249,20 @@
   version = "v1.0.3"
 
 [[projects]]
-  digest = "1:1b773526998f3dbde3a51a4a5881680c4d237d3600f570d900f97ac93c7ba0a8"
+  digest = "1:11118bd196646c6515fea3d6c43f66162833c6ae4939bfb229b9956d91c6cf17"
   name = "github.com/spf13/viper"
   packages = ["."]
   pruneopts = "UT"
-  revision = "9e56dacc08fbbf8c9ee2dbc717553c758ce42bc9"
-  version = "v1.3.2"
+  revision = "b5bf975e5823809fb22c7644d008757f78a4259e"
+  version = "v1.4.0"
 
 [[projects]]
-  digest = "1:3c1a69cdae3501bf75e76d0d86dc6f2b0a7421bc205c0cb7b96b19eed464a34d"
+  digest = "1:a5158647b553c61877aa9ae74f4015000294e47981e6b8b07525edcbb0747c81"
   name = "go.uber.org/atomic"
   packages = ["."]
   pruneopts = "UT"
-  revision = "1ea20fb1cbb1cc08cbd0d913a96dead89aa18289"
-  version = "v1.3.2"
+  revision = "df976f2515e274675050de7b3f42545de80594fd"
+  version = "v1.4.0"
 
 [[projects]]
   digest = "1:60bf2a5e347af463c42ed31a493d817f8a72f102543060ed992754e689805d1a"
@@ -272,7 +273,7 @@
   version = "v1.1.0"
 
 [[projects]]
-  digest = "1:c52caf7bd44f92e54627a31b85baf06a68333a196b3d8d241480a774733dcf8b"
+  digest = "1:676160e6a4722b08e0e26b11521d575c2cb2b6f0c679e1ee6178c5d8dee51e5e"
   name = "go.uber.org/zap"
   packages = [
     ".",
@@ -283,19 +284,19 @@
     "zapcore",
   ]
   pruneopts = "UT"
-  revision = "ff33455a0e382e8a81d14dd7c922020b6b5e7982"
-  version = "v1.9.1"
+  revision = "27376062155ad36be76b0f12cf1572a221d3a48c"
+  version = "v1.10.0"
 
 [[projects]]
   branch = "master"
-  digest = "1:e18c1645adfe83d66f80d3676040e478895669f9456ca8bafa6a7290656c1b48"
+  digest = "1:f928471955a5e8c1d148de46c6660e9fc4d08fa0ed065f90d9adba8fe1fe6101"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
-  revision = "81d4e9dc473e5e8c933f2aaeba2a3d81efb9aed2"
+  revision = "b47fdc937951267e2d980171881317deea47f29b"
 
 [[projects]]
-  digest = "1:8029e9743749d4be5bc9f7d42ea1659471767860f0cdc34d37c3111bd308a295"
+  digest = "1:1093f2eb4b344996604f7d8b29a16c5b22ab9e1b25652140d3fede39f640d5cd"
   name = "golang.org/x/text"
   packages = [
     "internal/gen",
@@ -306,19 +307,19 @@
     "unicode/norm",
   ]
   pruneopts = "UT"
-  revision = "f21a4dfb5e38f5895301dc265a8def02365cc3d0"
-  version = "v0.3.0"
+  revision = "342b2e1fbaa52c93f31447ad2c6abc048c63e475"
+  version = "v0.3.2"
 
 [[projects]]
-  digest = "1:d9ed69c1d4d528e4a7779accc3ee070e68760cdd822f69ff2cf8ae0f677afbe2"
+  digest = "1:206543450b862d116cd5375d20df0124c3ebeed0411e7acd96eaf14bdb4c1f51"
   name = "gopkg.in/go-playground/validator.v9"
   packages = [
     ".",
     "translations/en",
   ]
   pruneopts = "UT"
-  revision = "46b4b1e301c24cac870ffcb4ba5c8a703d1ef475"
-  version = "v9.28.0"
+  revision = "884d31b8cad6a1ec877f2400d555924cea03bbea"
+  version = "v9.29.0"
 
 [[projects]]
   digest = "1:1b36b0cb56126316f637ad55cfd5ed84c945fe45bd90e944666b4107a80a1da9"

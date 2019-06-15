@@ -2,8 +2,7 @@
 package main
 
 import (
-	"fmt"
-	"os"
+	"log"
 
 	"github.com/gozix/glue"
 	"github.com/gozix/redigo"
@@ -37,12 +36,10 @@ func main() {
 	)
 
 	if err != nil {
-		_, _ = fmt.Fprintf(os.Stderr, "Some error occurred during create app. Error: %v\n", err)
-		os.Exit(1)
+		log.Fatalf("Some error occurred during create app. Error: %v\n", err)
 	}
 
 	if err = app.Execute(); err != nil {
-		_, _ = fmt.Fprintf(os.Stderr, "Some error occurred during execute app. Error: %v\n", err)
-		os.Exit(2)
+		log.Fatalf("Some error occurred during execute app. Error: %v\n", err)
 	}
 }

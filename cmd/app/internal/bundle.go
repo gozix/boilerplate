@@ -2,8 +2,8 @@
 package internal
 
 import (
-	"github.com/gozix/sql"
-	"github.com/sarulabs/di"
+	sqlBundle "github.com/gozix/sql/v2"
+	"github.com/sarulabs/di/v2"
 
 	"github.com/gozix/boilerplate/cmd/app/internal/command"
 	"github.com/gozix/boilerplate/cmd/app/internal/database"
@@ -39,6 +39,6 @@ func (*Bundle) Build(builder *di.Builder) error {
 // DependsOn implements the glue.BundleDependsOn interface.
 func (*Bundle) DependsOn() []string {
 	return []string{
-		sql.BundleName,
+		sqlBundle.BundleName,
 	}
 }

@@ -4,11 +4,12 @@ package command
 import (
 	"strconv"
 
-	"github.com/gozix/glue"
-	ut "github.com/gozix/universal-translator"
-	validatorBundle "github.com/gozix/validator"
-	zapBundle "github.com/gozix/zap"
-	"github.com/sarulabs/di"
+	ut "github.com/go-playground/universal-translator"
+	glueBundle "github.com/gozix/glue/v2"
+	utBundle "github.com/gozix/universal-translator/v2"
+	validatorBundle "github.com/gozix/validator/v2"
+	zapBundle "github.com/gozix/zap/v2"
+	"github.com/sarulabs/di/v2"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 	"gopkg.in/go-playground/validator.v9"
@@ -25,7 +26,7 @@ func DefCommandCookieFetch() di.Def {
 	return di.Def{
 		Name: DefCommandCookieFetchName,
 		Tags: []di.Tag{{
-			Name: glue.TagCliCommand,
+			Name: glueBundle.TagCliCommand,
 		}},
 		Build: func(ctn di.Container) (_ interface{}, err error) {
 			return &cobra.Command{
@@ -46,7 +47,7 @@ func DefCommandCookieFetch() di.Def {
 					}
 
 					var translator *ut.UniversalTranslator
-					if err = ctn.Fill(ut.BundleName, &translator); err != nil {
+					if err = ctn.Fill(utBundle.BundleName, &translator); err != nil {
 						return err
 					}
 

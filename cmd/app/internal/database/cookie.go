@@ -2,9 +2,9 @@
 package database
 
 import (
-	"github.com/gozix/sql"
+	sqlBundle "github.com/gozix/sql/v2"
 	"github.com/iqoption/nap"
-	"github.com/sarulabs/di"
+	"github.com/sarulabs/di/v2"
 
 	"github.com/gozix/boilerplate/cmd/app/internal/domain"
 )
@@ -22,8 +22,8 @@ func DefCookieRepository() di.Def {
 	return di.Def{
 		Name: DefCookieRepositoryName,
 		Build: func(ctn di.Container) (_ interface{}, err error) {
-			var registry *sql.Registry
-			if err = ctn.Fill(sql.BundleName, &registry); err != nil {
+			var registry *sqlBundle.Registry
+			if err = ctn.Fill(sqlBundle.BundleName, &registry); err != nil {
 				return nil, err
 			}
 

@@ -2,11 +2,11 @@
 package command
 
 import (
-	utBundle "github.com/gozix/universal-translator"
-	validatorBundle "github.com/gozix/validator"
-	zapBundle "github.com/gozix/zap"
+	utBundle "github.com/gozix/universal-translator/v2"
+	validatorBundle "github.com/gozix/validator/v2"
+	zapBundle "github.com/gozix/zap/v2"
 	"github.com/pkg/errors"
-	"github.com/sarulabs/di"
+	"github.com/sarulabs/di/v2"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 	"gopkg.in/go-playground/validator.v9"

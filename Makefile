@@ -1,5 +1,5 @@
 # Package dir
-GO_DIR ?= $(shell pwd)
+GO_DIR ?= $(CURDIR)
 
 # Package import path
 GO_PKG ?= $(shell go list -e -f "{{ .ImportPath }}")
@@ -20,16 +20,21 @@ GO_TEST_COVERAGE_FILE_NAME ?= coverage.out
 # Set a default `min_confidence` value for `golint`
 GO_LINT_MIN_CONFIDENCE ?= 0.2
 
-all: install-deps build compress
+all: help
 
-.PHONY: build
+.PHONY: help # Show list of targets with description. You're looking at it
+help:
+	@grep "^.PHONY: .* #" Makefile | sed "s/\.PHONY: \(.*\) # \(.*\)/\1 - \2/" | expand -t20
+
+.PHONY: build # Compile application source code to binaries files
 build:
 	@echo "Build binaries"
 	@ERR=0; \
 	for CMD in $$(find "./cmd" -maxdepth 1 -mindepth 1 -type d -print); do \
 		BIN=$$(basename "$${CMD}"); \
-		go build -gcflags="-trimpath=$(GO_DIR)" -asmflags="-trimpath=$(GO_DIR)" \
-				 -ldflags "-X $(GO_PKG)/cli/command.appVersion=$(GO_VER)" \
+		go build -gcflags="-trimpath=$(GO_DIR)" \
+				 -asmflags="-trimpath=$(GO_DIR)" \
+				 -ldflags "-X main.Version=$(GO_VER)" \
 				 -o "$(GO_DIR)/.bin/$${BIN}/$(GO_BIN)$(GO_DEL)$${BIN}" "$${CMD}" || { \
 			ERR=$$?; \
 			break; \
@@ -39,12 +44,12 @@ build:
 		exit $$ERR; \
 	fi
 
-.PHONY: generate
+.PHONY: generate # Generate auto generated code
 generate:
 	@echo "Run easyjson"
 	@go list -f "{{ .Dir }}" ./... | xargs -I "{}" grep -lrw "{}" -e "easyjson:json" | sort | uniq | xargs -I "{}" easyjson "{}" || exit 1
 
-.PHONY: compress
+.PHONY: compress # Compress application binaries
 compress:
 	@echo "Compress binaries"
 	@ERR=0; \
@@ -59,37 +64,29 @@ compress:
     	exit $$ERR; \
     fi;
 
-.PHONY: install-deps
-install-deps:
+.PHONY: install # Install dependencies
+install:
 	@echo "Install dependencies"
-	@dep ensure -v -vendor-only
+	@go mod download
 
-.PHONY: install-deps-dev
-install-deps-dev:
-	@echo "Install Dep"
-	@go get github.com/golang/dep/cmd/dep
-
-.PHONY: update-deps
-update-deps:
+.PHONY: update # Update dependencies
+update:
 	@echo "Update dependencies"
-	dep ensure -v -update
+	@go get -u all
+	@echo "Cleanup dependencies"
+	@go mod tidy
 
-.PHONY: update-deps-dev
-update-deps-dev:
-	@echo "Update Dep"
-	@go get -u github.com/golang/dep/cmd/dep
-
-.PHONY: test
+.PHONY: test # Run application tests
 test:
 	@echo "Run unit tests"
 	@go test -v ./...
 
-.PHONY: test-with-coverage
+.PHONY: test-with-coverage # Run application tests with code coverage
 test-with-coverage:
 	@echo "Run unit tests with coverage"
 	@go test -cover ./...
 
-.PHONY: test-with-coverage-profile
+.PHONY: test-with-coverage-profile # Run application tests with code coverage profile
 test-with-coverage-profile:
 	@echo "Run unit tests with coverage profile"
 	@echo "mode: ${GO_TEST_COVERAGE_MODE}" > "${GO_TEST_COVERAGE_FILE_NAME}"
@@ -98,38 +95,38 @@ test-with-coverage-profile:
 	@go tool cover -func="${GO_TEST_COVERAGE_FILE_NAME}";
 	@rm "${GO_TEST_COVERAGE_FILE_NAME}";
 
-.PHONY: fix
+.PHONY: fix # Fix code style
 fix: fix-format fix-import
 
-.PHONY: fix-import
-fix-import:
-	@echo "Fix imports"
-	@errors=$$(goimports -l -w -local $(GO_PKG) $$(go list -f "{{ .Dir }}" ./...)); if [ "$${errors}" != "" ]; then echo "$${errors}"; fi
-
-.PHONY: fix-format
+.PHONY: fix-format # Fix formatting of code
 fix-format:
 	@echo "Fix formatting"
-	@gofmt -w ${GO_FMT_FLAGS} $$(go list -f "{{ .Dir }}" ./...); if [ "$${errors}" != "" ]; then echo "$${errors}"; fi
+	@gofmt -w ${GO_FMT_FLAGS} $$(go list -f "{{ .Dir }}" ./...); if [ "$${errors}" != "" ]; then echo "$${errors}"; exit 1; fi
 
-.PHONY: lint
+.PHONY: fix-import # Fix code style of imports
+fix-import:
+	@echo "Fix imports"
+	@errors=$$(goimports -l -w -local $(GO_PKG) $$(go list -f "{{ .Dir }}" ./...)); if [ "$${errors}" != "" ]; then echo "$${errors}"; exit 1; fi
+
+.PHONY: lint # Lint code style of source code
 lint: lint-format lint-import lint-style
 
-.PHONY: lint-format
+.PHONY: lint-format # Lint formatting of source code
 lint-format:
 	@echo "Check formatting"
 	@errors=$$(gofmt -l ${GO_FMT_FLAGS} $$(go list -f "{{ .Dir }}" ./...)); if [ "$${errors}" != "" ]; then echo "$${errors}"; exit 1; fi
 
-.PHONY: lint-import
+.PHONY: lint-import # Lint code style of imports
 lint-import:
 	@echo "Check imports"
 	@errors=$$(goimports -l -local $(GO_PKG) $$(go list -f "{{ .Dir }}" ./...)); if [ "$${errors}" != "" ]; then echo "$${errors}"; exit 1; fi
 
-.PHONY: lint-style
+.PHONY: lint-style # Lint code style of source code
 lint-style:
 	@echo "Check code style"
 	@errors=$$(golint -min_confidence=${GO_LINT_MIN_CONFIDENCE} $$(go list ./...)); if [ "$${errors}" != "" ]; then echo "$${errors}"; exit 1; fi
 
-.PHONY: clean
+.PHONY: clean # Delete auto generated files
 clean:
 	@echo "Cleanup"
 	@find . -type f -name "*easyjson*" -delete

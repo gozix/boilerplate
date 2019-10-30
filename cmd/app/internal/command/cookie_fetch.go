@@ -5,14 +5,15 @@ import (
 	"strconv"
 
 	ut "github.com/go-playground/universal-translator"
-	glueBundle "github.com/gozix/glue/v2"
-	utBundle "github.com/gozix/universal-translator/v2"
-	validatorBundle "github.com/gozix/validator/v2"
-	zapBundle "github.com/gozix/zap/v2"
 	"github.com/sarulabs/di/v2"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 	"gopkg.in/go-playground/validator.v9"
+
+	gzGlue "github.com/gozix/glue/v2"
+	gzUT "github.com/gozix/universal-translator/v2"
+	gzValidator "github.com/gozix/validator/v2"
+	gzZap "github.com/gozix/zap/v2"
 
 	"github.com/gozix/boilerplate/cmd/app/internal/database"
 	"github.com/gozix/boilerplate/cmd/app/internal/domain"
@@ -26,7 +27,7 @@ func DefCommandCookieFetch() di.Def {
 	return di.Def{
 		Name: DefCommandCookieFetchName,
 		Tags: []di.Tag{{
-			Name: glueBundle.TagCliCommand,
+			Name: gzGlue.TagCliCommand,
 		}},
 		Build: func(ctn di.Container) (_ interface{}, err error) {
 			return &cobra.Command{
@@ -37,7 +38,7 @@ func DefCommandCookieFetch() di.Def {
 				Args:          cobra.ExactArgs(1),
 				RunE: func(cmd *cobra.Command, args []string) (err error) {
 					var logger *zap.Logger
-					if err = ctn.Fill(zapBundle.BundleName, &logger); err != nil {
+					if err = ctn.Fill(gzZap.BundleName, &logger); err != nil {
 						return err
 					}
 
@@ -47,12 +48,12 @@ func DefCommandCookieFetch() di.Def {
 					}
 
 					var translator *ut.UniversalTranslator
-					if err = ctn.Fill(utBundle.BundleName, &translator); err != nil {
+					if err = ctn.Fill(gzUT.BundleName, &translator); err != nil {
 						return err
 					}
 
 					var validate *validator.Validate
-					if err = ctn.Fill(validatorBundle.BundleName, &validate); err != nil {
+					if err = ctn.Fill(gzValidator.BundleName, &validate); err != nil {
 						return err
 					}
 

@@ -2,7 +2,7 @@
 GO_DIR ?= $(CURDIR)
 
 # Package import path
-GO_PKG ?= $(shell go list -e -f "{{ .ImportPath }}")
+GO_PKG ?= $(shell go list -e -m -f "{{ .Dir }}" 2> /dev/null || go list -e -f "{{ .ImportPath }}" 2> /dev/null || pwd)
 
 # Package version
 GO_VER ?= $(shell date -u +%Y-%m-%d.%H:%M:%S)
@@ -20,6 +20,9 @@ GO_TEST_COVERAGE_FILE_NAME ?= coverage.out
 # Set a default `min_confidence` value for `golint`
 GO_LINT_MIN_CONFIDENCE ?= 0.2
 
+# .env
+-include Makefile.env
+
 all: help
 
 .PHONY: help # Show list of targets with description. You're looking at it
@@ -28,7 +31,7 @@ help:
 
 .PHONY: build # Compile application source code to binaries files
 build:
-	@echo "Build binaries"
+	@echo "Build package: $(GO_PKG)"
 	@ERR=0; \
 	for CMD in $$(find "./cmd" -maxdepth 1 -mindepth 1 -type d -print); do \
 		BIN=$$(basename "$${CMD}"); \
@@ -64,17 +67,22 @@ compress:
     	exit $$ERR; \
     fi;
 
+.PHONY: conf-gomod # Setup GOPROVATE and configure GIT
+conf-gomod:
+	@go env -w GOPRIVATE=*.mycompany.com
+	@git config --global url.ssh://git@git.mycompany.com/.insteadOf https://git.mycompany.com/
+
 .PHONY: install # Install dependencies
-install:
+install: conf-gomod
 	@echo "Install dependencies"
-	@go mod download
+	go mod download
 
 .PHONY: update # Update dependencies
-update:
+update: git
 	@echo "Update dependencies"
-	@go get -u all
-	@echo "Cleanup dependencies"
-	@go mod tidy
+	go get -u -t all
+	@echo "Optimize dependencies"
+	go mod tidy -v
 
 .PHONY: test # Run application tests
 test:
@@ -114,12 +122,12 @@ lint: lint-format lint-import lint-style
 .PHONY: lint-format # Lint formatting of source code
 lint-format:
 	@echo "Check formatting"
-	@errors=$$(gofmt -l ${GO_FMT_FLAGS} $$(go list -f "{{ .Dir }}" ./...)); if [ "$${errors}" != "" ]; then echo "$${errors}"; exit 1; fi
+	golangci-lint run --disable-all --enable gofmt
 
 .PHONY: lint-import # Lint code style of imports
 lint-import:
 	@echo "Check imports"
-	@errors=$$(goimports -l -local $(GO_PKG) $$(go list -f "{{ .Dir }}" ./...)); if [ "$${errors}" != "" ]; then echo "$${errors}"; exit 1; fi
+	golangci-lint run --disable-all --enable goimports
 
 .PHONY: lint-style # Lint code style of source code
 lint-style:

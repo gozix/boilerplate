@@ -2,9 +2,10 @@
 package command
 
 import (
-	glueBundle "github.com/gozix/glue/v2"
 	"github.com/sarulabs/di/v2"
 	"github.com/spf13/cobra"
+
+	gzGlue "github.com/gozix/glue/v2"
 )
 
 // DefCommandCookieName is container name.
@@ -15,7 +16,7 @@ func DefCommandCookie() di.Def {
 	return di.Def{
 		Name: DefCommandCookieName,
 		Tags: []di.Tag{{
-			Name: glueBundle.TagCliCommand,
+			Name: gzGlue.TagCliCommand,
 		}},
 		Build: func(ctn di.Container) (_ interface{}, err error) {
 			var addCmd *cobra.Command

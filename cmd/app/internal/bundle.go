@@ -25,7 +25,7 @@ func (*Bundle) Name() string {
 // Build implements the glue.Bundle interface.
 func (*Bundle) Build(builder *di.Builder) error {
 	return builder.Add(
-		// commands
+		// command
 		command.DefCommandCookie(),
 		command.DefCommandCookieAdd(),
 		command.DefCommandCookieFetch(),

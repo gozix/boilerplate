@@ -2,13 +2,14 @@
 package command
 
 import (
-	glueBundle "github.com/gozix/glue/v2"
-	viperBundle "github.com/gozix/viper/v2"
-	zapBundle "github.com/gozix/zap/v2"
 	"github.com/sarulabs/di/v2"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
+
+	gzGlue "github.com/gozix/glue/v2"
+	gzViper "github.com/gozix/viper/v2"
+	gzZap "github.com/gozix/zap/v2"
 )
 
 // DefCommandMessageName is container name.
@@ -19,7 +20,7 @@ func DefCommandMessage() di.Def {
 	return di.Def{
 		Name: DefCommandMessageName,
 		Tags: []di.Tag{{
-			Name: glueBundle.TagCliCommand,
+			Name: gzGlue.TagCliCommand,
 		}},
 		Build: func(ctn di.Container) (_ interface{}, err error) {
 			return &cobra.Command{
@@ -29,12 +30,12 @@ func DefCommandMessage() di.Def {
 				SilenceErrors: true,
 				RunE: func(cmd *cobra.Command, args []string) error {
 					var cfg *viper.Viper
-					if err = ctn.Fill(viperBundle.BundleName, &cfg); err != nil {
+					if err = ctn.Fill(gzViper.BundleName, &cfg); err != nil {
 						return err
 					}
 
 					var logger *zap.Logger
-					if err = ctn.Fill(zapBundle.BundleName, &logger); err != nil {
+					if err = ctn.Fill(gzZap.BundleName, &logger); err != nil {
 						return err
 					}
 

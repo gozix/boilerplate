@@ -2,14 +2,15 @@
 package command
 
 import (
-	utBundle "github.com/gozix/universal-translator/v2"
-	validatorBundle "github.com/gozix/validator/v2"
-	zapBundle "github.com/gozix/zap/v2"
 	"github.com/pkg/errors"
 	"github.com/sarulabs/di/v2"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 	"gopkg.in/go-playground/validator.v9"
+
+	gzUT "github.com/gozix/universal-translator/v2"
+	gzValidator "github.com/gozix/validator/v2"
+	gzZap "github.com/gozix/zap/v2"
 
 	"github.com/gozix/boilerplate/cmd/app/internal/database"
 	"github.com/gozix/boilerplate/cmd/app/internal/domain"
@@ -31,7 +32,7 @@ func DefCommandCookieAdd() di.Def {
 				Args:          cobra.ExactArgs(1),
 				RunE: func(cmd *cobra.Command, args []string) (err error) {
 					var logger *zap.Logger
-					if err = ctn.Fill(zapBundle.BundleName, &logger); err != nil {
+					if err = ctn.Fill(gzZap.BundleName, &logger); err != nil {
 						return err
 					}
 
@@ -40,13 +41,13 @@ func DefCommandCookieAdd() di.Def {
 						return err
 					}
 
-					var translator *utBundle.UniversalTranslator
-					if err = ctn.Fill(utBundle.BundleName, &translator); err != nil {
+					var translator *gzUT.UniversalTranslator
+					if err = ctn.Fill(gzUT.BundleName, &translator); err != nil {
 						return err
 					}
 
 					var validate *validator.Validate
-					if err = ctn.Fill(validatorBundle.BundleName, &validate); err != nil {
+					if err = ctn.Fill(gzValidator.BundleName, &validate); err != nil {
 						return err
 					}
 

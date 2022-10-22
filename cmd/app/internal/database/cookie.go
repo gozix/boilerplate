@@ -2,10 +2,9 @@
 package database
 
 import (
-	"github.com/iqoption/nap"
-	"github.com/sarulabs/di/v2"
+	gzSQL "github.com/gozix/sql/v3"
 
-	gzSQL "github.com/gozix/sql/v2"
+	"github.com/iqoption/nap"
 
 	"github.com/gozix/boilerplate/cmd/app/internal/domain"
 )
@@ -15,29 +14,16 @@ type CookieRepository struct {
 	db *nap.DB
 }
 
-// DefCookieRepositoryName is container name.
-const DefCookieRepositoryName = "database.repository.cookie"
-
-// DefCookieRepository register repository in di container.
-func DefCookieRepository() di.Def {
-	return di.Def{
-		Name: DefCookieRepositoryName,
-		Build: func(ctn di.Container) (_ interface{}, err error) {
-			var registry *gzSQL.Registry
-			if err = ctn.Fill(gzSQL.BundleName, &registry); err != nil {
-				return nil, err
-			}
-
-			var db *nap.DB
-			if db, err = registry.Connection(); err != nil {
-				return nil, err
-			}
-
-			return &CookieRepository{
-				db: db,
-			}, nil
-		},
+// NewCookie is repository constructor.
+func NewCookie(registry *gzSQL.Registry) (_ *CookieRepository, err error) {
+	var db *nap.DB
+	if db, err = registry.Connection(); err != nil {
+		return nil, err
 	}
+
+	return &CookieRepository{
+		db: db,
+	}, nil
 }
 
 // Save implementation.

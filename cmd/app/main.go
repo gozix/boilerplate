@@ -3,15 +3,23 @@ package main
 
 import (
 	"log"
+	"runtime/debug"
 
-	gzGlue "github.com/gozix/glue/v2"
-	gzRedigo "github.com/gozix/redigo/v3"
-	gzMigrate "github.com/gozix/sql-migrate/v2"
-	gzSQL "github.com/gozix/sql/v2"
-	gzUT "github.com/gozix/universal-translator/v2"
-	gzValidator "github.com/gozix/validator/v2"
-	gzViper "github.com/gozix/viper/v2"
-	gzZap "github.com/gozix/zap/v2"
+	gzAerospike "github.com/gozix/aerospike/v2"
+	gzClockwork "github.com/gozix/clockwork/v3"
+	gzConsul "github.com/gozix/consul/v3"
+	gzEcho "github.com/gozix/echo/v3"
+	gzGlue "github.com/gozix/glue/v3"
+	gzGoredis "github.com/gozix/goredis/v4"
+	gzPrometheus "github.com/gozix/prometheus/v2"
+	gzRedigo "github.com/gozix/redigo/v4"
+	gzSQLMigrate "github.com/gozix/sql-migrate/v3"
+	gzSQL "github.com/gozix/sql/v3"
+	gzUT "github.com/gozix/universal-translator/v3"
+	gzValidator "github.com/gozix/validator/v3"
+	gzViper "github.com/gozix/viper/v3"
+	gzZapGelf "github.com/gozix/zap-gelf/v2"
+	gzZap "github.com/gozix/zap/v3"
 	_ "github.com/lib/pq" // Postgres database/sql driver
 
 	gzInternal "github.com/gozix/boilerplate/cmd/app/internal"
@@ -24,22 +32,30 @@ func main() {
 	var app, err = gzGlue.NewApp(
 		gzGlue.Version(Version),
 		gzGlue.Bundles(
+			gzInternal.NewBundle(),
+
+			gzAerospike.NewBundle(),
+			gzClockwork.NewBundle(),
+			gzConsul.NewBundle(),
+			gzEcho.NewBundle(),
+			gzGoredis.NewBundle(),
+			gzPrometheus.NewBundle(),
 			gzRedigo.NewBundle(),
-			gzMigrate.NewBundle(),
 			gzSQL.NewBundle(),
+			gzSQLMigrate.NewBundle(),
 			gzUT.NewBundle(),
 			gzValidator.NewBundle(),
 			gzViper.NewBundle(),
 			gzZap.NewBundle(),
-			gzInternal.NewBundle(),
+			gzZapGelf.NewBundle(),
 		),
 	)
 
 	if err != nil {
-		log.Fatalf("Some error occurred during create app. Error: %v\n", err)
+		log.Fatalf("Some error occurred during create app. Error: %s\n\n%s", err, debug.Stack())
 	}
 
 	if err = app.Execute(); err != nil {
-		log.Fatalf("Some error occurred during execute app. Error: %v\n", err)
+		log.Fatalf("Some error occurred during execute app. Error: %s\n\n%s", err, debug.Stack())
 	}
 }

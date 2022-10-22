@@ -11,10 +11,15 @@
     }
   },
   "zap": {
-    "cores": [{
-      "level": "debug",
-      "encoding": "json"
-    }],
+    "cores": {
+      "console": {
+        "type": "stream",
+        "level": "debug",
+        "encoding": "console",
+        "message_key": "message",
+        "time_encoder": "iso8601"
+      }
+    },
     "caller": true,
     "stacktrace": "error",
     "development": false
